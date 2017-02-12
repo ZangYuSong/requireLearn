@@ -6,7 +6,12 @@ define(["angular-route"], function() {
                 template: "这是首页页面"
             })
             .when("/computers", {
-                template: "这是电脑分类页面"
+                template: "这是电脑分类页面",
+                resolve: {
+                    load: function() {
+                        require(["file"]);
+                    }
+                }
             })
             .when("/printers", {
                 template: "这是打印机页面"
@@ -15,5 +20,4 @@ define(["angular-route"], function() {
                 redirectTo: "/"
             });
     }]);
-    return app;
 });
