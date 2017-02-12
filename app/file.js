@@ -1,3 +1,5 @@
-define(function() {
-    alert("我是动态加载的文件");
+define(["app"], function(app) {
+    app.registerController("ctrl.file", function($scope) {
+        $scope.title = "--测试 ";
+    });
 });
